@@ -1,0 +1,84 @@
+apt(1)                                                                  apt(1)
+
+
+
+NNAAMMEE
+       apt - annotation processing tool
+
+SSYYNNOOPPSSIISS
+       aapptt  [ --ccllaassssppaatthh _c_l_a_s_s_p_a_t_h ] [ --ssoouurrcceeppaatthh _s_o_u_r_c_e_p_a_t_h ] [ --dd _d_i_r_e_c_t_o_r_y
+       ] [ --ss _d_i_r_e_c_t_o_r_y ] [ --ffaaccttoorryyppaatthh _p_a_t_h ] [ --ffaaccttoorryy _c_l_a_s_s ] [ --pprriinntt  ]
+       [  --nnooccoommppiillee  ] [ --AA [ _k_e_y [ =_v_a_l ] ] ] [ jjaavvaacc _o_p_t_i_o_n ] _s_o_u_r_c_e_f_i_l_e_s [
+       @@_f_i_l_e_s ]
+
+DDEESSCCRRIIPPTTIIOONN
+       The tool apt, annotation processing tool, includes a set of new reflec-
+       tive APIs and supporting infrastructure to process program annotations.
+       The apt reflective APIs provide a build-time,  source-based,  read-only
+       view  of  program  structure.  These  reflective  APIs  are designed to
+       cleanly model the JavaTM programming language's type system  after  the
+       addition  of  generics.  First, apt runs annotation processors that can
+       produce new source code and other files. Next, apt can  cause  compila-
+       tion  of  both original and generated source files, easing development.
+       The reflective APIs and other APIs used to interact with the  tool  are
+       subpackages of com.sun.mirror.
+
+       A  fuller  discussion  of how the tool operates as well as instructions
+       for  developing  with  apt  are  in  Getting  Started   with   apt   at
+       http://java.sun.com/j2se/1.5.0/docs/guide/apt/GettingStarted.html.
+
+PPAARRAAMMEETTEERRSS
+       Options may be in any order. For a discussion of parameters which apply
+       to a specific option, see OPTIONS below.
+
+       _s_o_u_r_c_e_f_i_l_e_s    Zero or more source files to be processed.
+
+       @@_f_i_l_e_s         One or more  files  that  list  source  files  or  other
+                      options.
+
+OOPPTTIIOONNSS
+   aapptt ssppeecciiffiicc ooppttiioonnss
+       --ss _d_i_r         Specify  the directory root under which processor-gener-
+                      ated source files will be placed; files  are  placed  in
+                      subdirectories based on package namespace.
+
+       --nnooccoommppiillee     Do not compile sources files to class files.
+
+       --pprriinntt         Print  out  textual  representation  of specified types;
+                      perform no annotation processing or compilation.
+
+       --AA[[_k_e_y[[==_v_a_l]]]]  Options to pass to annotation processors  --  these  are
+                      not  interpreted by apt directly, but are made available
+                      for use by individual processors
+
+       --ffaaccttoorryyppaatthh _p_a_t_h
+                      Specify where to find annotation processor factories; if
+                      this  option  is used, the classpath is not searched for
+                      factories.
+
+       --ffaaccttoorryy _c_l_a_s_s_n_a_m_e
+                      Name of annotation processor factory  to  use;  bypasses
+                      default discovery process
+
+   OOppttiioonnss sshhaarreedd wwiitthh jjaavvaacc
+       --dd _d_i_r         Specify  where  to  place  processor and javac generated
+                      class files
+
+       --ccpp _p_a_t_h       or
+       --ccllaassssppaatthh _p_a_t_h
+                      Specify where to find user class  files  and  annotation
+                      processor  factories.  If  --ffaaccttoorryyppaatthh  is  given,  the
+                      classpath is not searched for factories.
+
+       Consult the jjaavvaacc(1) man page for information on jjaavvaacc options.
+
+NNOOTTEESS
+       The apt tool and its associated APIs may be changed  or  superseded  in
+       future j2se releases.
+
+SSEEEE AALLSSOO
+       jjaavvaacc(1) jjaavvaa(1)
+
+
+
+                                 13 June 2004                           apt(1)
